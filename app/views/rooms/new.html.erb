@@ -24,6 +24,7 @@
       </div>
 
       <div class='chat-room-form__field--right'>
+        <select>
         <!--プルダウン機能
 
         room[user_ids] =
@@ -35,6 +36,7 @@
         {"room" => {"user_ids" => ["選択したユーザーのid", "ログインユーザーのid"]}}
 
         []を追記することで、その数に合わせた種類の値を格納できる。
+        また、パラメーターに[]を追記すると、その値は配列で送信される。
         -->
         <select name="room[user_ids][]">
 
