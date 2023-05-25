@@ -4,7 +4,12 @@
 <!--サイドバー（ヘッダー
 -->
 <div class="header-name">
-    <a href="#">Tom</a>
+    <!--名前の表示＆編集フォームへのリンク設置。
+    current_user.name  ...ログインユーザーの名前を表示。
+    edit_user_path(current_user)  ...編集フォーム（ログインユーザー）。
+    -->
+    <%= link_to current_user.name, edit_user_path(current_user) %>
+
   </div>
   <div class="create-room">
     <a href="#">チャットを作成する</a>
