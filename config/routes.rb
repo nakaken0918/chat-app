@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update]
   #app/controllers/rooms_contoroller.rbにルーティング。
   #new,createのデータのみ取得する。
-  resources :rooms, only: [:new, :create] do
+  resources :rooms, only: [:new, :create, :destroy] do
     #ネスト親のroomsに属するmessages_controller.rbにルーティング。
     #index,createのデータのみ取得する。
     #この組み合わせにより、メッセージ関連のルーム情報が得られるようになる。

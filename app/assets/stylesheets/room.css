@@ -89,3 +89,9 @@ select {
   height: 80px;
   width: 100%;
 }
+
+.field_with_errors {
+  /*contents指定すると、その要素のボックスは非表示になる。
+  */
+  display: contents;
+}
