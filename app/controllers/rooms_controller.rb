@@ -1,4 +1,8 @@
 class RoomsController < ApplicationController
+
+  def index
+  end
+
   #newアクションを定義する。
   def new
     @room = Room.new
