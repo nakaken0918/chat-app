@@ -3,11 +3,15 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  #バリデーションの設定。nameのフォームが入力されていること。
-  validates :name, presence: true
-  #room_userと１：多の関係にあることを示す。
+  
+  #room_userテーブルと１：多の関係にあることを示す。
   has_many :room_users
-  #room_userを介してroomテーブルと１：多の関係になることを示す。
+  #room_userテーブルを介してroomテーブルと１：多の関係になることを示す。
   has_many :rooms, through: :room_users
+  #messageテーブルと１：多の関係にあることを示す。
+  has_many :messages
+
+  #バリデーションを設定。nameが入力されていれば（presence）許可される（true）。
+  validates :name, presence: true
 
 end
