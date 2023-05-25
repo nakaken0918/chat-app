@@ -6,5 +6,8 @@ Rails.application.routes.draw do
   #app/controllers/users_contoroller.rbにルーティング。
   #edit,updateのデータのみ取得する。
   resources :users, only: [:edit, :update]
+  #app/controllers/rooms_contoroller.rbにルーティング。
+  #new,createのデータのみ取得する。
+  resources :rooms, only: [:new, :create]
 
 end
