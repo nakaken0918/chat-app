@@ -12,7 +12,9 @@
 
   </div>
   <div class="create-room">
-    <a href="#">チャットを作成する</a>
+    <!--新規チャットルームの作成フォームへのリンク設置。
+    -->
+    <%= link_to "チャットを作成する", new_room_path %>
   </div>
 
 </div>
@@ -21,14 +23,14 @@
 <!--サイドバー（ルーム一覧
 -->
 <div class="room">
-    <div class="room-name">
-      <a href="#">techroom1</a>
+  <!--作成されたチャットルームの表示
+  -->
+  <% current_user.rooms.each do |room| %>
+    <div class="room">
+      <div class="room-name">
+        <a href="#"><%= room.name %></a>
+      </div>
     </div>
-  </div>
-  <div class="room">
-    <div class="room-name">
-      <a href="#">techroom2</a>
-    </div>
-  </div>
+  <% end %>
 
 </div>
