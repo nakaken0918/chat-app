@@ -8,7 +8,7 @@
       <!-- 投稿したユーザー名情報を出力する -->
       <%= message.user.name %>
     </div>
-    
+
     <div class="message-date">
       <!-- 投稿した時刻を出力する -->
       <%= l message.created_at %>
@@ -22,6 +22,13 @@
       <!-- 投稿したメッセージ内容を記述する -->
       <%= message.content %>
     </div>
+    <!--画像の表示
+
+    variant(resize: '##x##')  ...Active Storageの拡張機能。ファイルの表示サイズを設定できる。
+    if~  ...条件をつける。
+    attached?  ...データが存在する場合を示す。
+    -->
+    <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
 
   </div>
 
