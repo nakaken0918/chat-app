@@ -1,9 +1,9 @@
 <!--サイドバー
 -->
 <div class="side-bar-header">
-<!--サイドバー（ヘッダー
--->
-<div class="header-name">
+  <!--サイドバー（ヘッダー
+  -->
+  <div class="header-name">
     <!--名前の表示＆編集フォームへのリンク設置。
     current_user.name  ...ログインユーザーの名前を表示。
     edit_user_path(current_user)  ...編集フォーム（ログインユーザー）。
@@ -11,6 +11,7 @@
     <%= link_to current_user.name, edit_user_path(current_user) %>
 
   </div>
+
   <div class="create-room">
     <!--新規チャットルームの作成フォームへのリンク設置。
     -->
@@ -20,21 +21,27 @@
 </div>
 
 <div class="rooms">
-<!--サイドバー（ルーム一覧
--->
-<div class="room">
-  <!--作成されたチャットルームの表示
+  <!--サイドバー（ルーム一覧
   -->
-  <% current_user.rooms.each do |room| %>
-    <div class="room">
-      <div class="room-name">
-        <!--
-        room.name,room_messages_path(room)  
-        ...引数にroomを使用することで、room.nameにroom内の情報（チャットルームＩＤ）を付与できる。
-        -->
-        <%= link_to room.name, room_messages_path(room) %>
+  <div class="room">
+    <!--作成されたチャットルームの表示
+    -->
+    <% current_user.rooms.each do |room| %>
+
+      <div class="room">
+
+        <div class="room-name">
+          <!--
+          room.name,room_messages_path(room)  
+          ...引数にroomを使用することで、room.nameにroom内の情報（チャットルームＩＤ）を付与できる。
+          -->
+          <%= link_to room.name, room_messages_path(room) %>
+        </div>
+        
       </div>
-    </div>
-  <% end %>
+
+    <% end %>
+
+  </div>
 
 </div>
